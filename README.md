@@ -9,15 +9,15 @@ In this Application **request** & **Flask** dependency is used.
 
 **Step 3 : Create a Docker file**
 This is Dockerfile for above app.
-# Use an official Python image
+**Use an official Python image**
 FROM python
-# Set the Working Directory inside the container
+**Set the Working Directory inside the container**
 WORkDIR /usr/scr/app
-# Copy the current dictory into container directory /usr/scr/app
+**Copy the current dictory into container directory /usr/scr/app**
 COPY . .
-# install the dependency
+**install the dependency**
 RUN pip install -r requirements.txt
-# Run the application
+**Run the application**
 CMD ["python", "./random_fact.py"]
 
 **Step 4 : Build the Docker Image**
