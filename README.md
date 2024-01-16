@@ -26,7 +26,7 @@ I create a Docker image for this application using command below.
 
 **docker build -t random_fact .**
 
-<!-- The output of this command is :
+The output of this command is :
 naeem@naeempc:~/Downloads/DevOps Dice/Dice-Assignment1-Part1$ docker build -t random_fact .
 [+] Building 8.0s (4/9)                                                                                                                             docker:defaultt
  => [internal] load build definition from Dockerfile                                                                                                          0.0ss
@@ -69,7 +69,7 @@ naeem@naeempc:~/Downloads/DevOps Dice/Dice-Assignment1-Part1$ docker build -t ra
 View build details: docker-desktop://dashboard/build/default/default/mqb7j2s2w5ro43v6beoref010
 
 What's Next?
-  View a summary of image vulnerabilities and recommendations → docker scout quickview -->
+  View a summary of image vulnerabilities and recommendations → docker scout quickview
 
 **Step 5 : Push the Docker Image to Docker Hub**
 - In this step, First I create DockerHub account using Docker Desktop. Provide the details & login in Docker Desktop. Now you can push your local image to your Docker Hub Account.
@@ -87,9 +87,9 @@ What's Next?
 output is:
 
 naeem@naeempc:~/Downloads/DevOps Dice/Dice-Assignment1-Part1$ docker images
-<!-- REPOSITORY                TAG       IMAGE ID       CREATED          SIZE
+REPOSITORY                TAG       IMAGE ID       CREATED          SIZE
 itsnaeemraza/python_app   v1.0      722e00083cf9   12 minutes ago   1.07GB
-random_fact               latest    722e00083cf9   12 minutes ago   1.07GB -->
+random_fact               latest    722e00083cf9   12 minutes ago   1.07GB
 Then 
 - Docker Login using the command : 
 
@@ -129,7 +129,7 @@ While create the new repo I click on include a README.md file in which I will do
 **Step 8 : Push the Codebase to GitHub**
 
 - git status
-<!-- 
+
 On branch main
 Your branch is up to date with 'origin/main'.
 
@@ -151,23 +151,23 @@ Changes not staged for commit:
 Untracked files:
   (use "git add <file>..." to include in what will be committed)
 	.gitignore
-	Dockerfile -->
+	Dockerfile
 
 - git add .
 
 naeem@naeempc:~/Downloads/DevOps Dice/Dice-Assignment1-Part1$ 
 **git commit -m "This is the Part-1 of Assignment-1 Dice DevOps Course"**
 
-<!-- [main c201b97] This is the Part-1 of Assignment-1 Dice DevOps Course
+[main c201b97] This is the Part-1 of Assignment-1 Dice DevOps Course
  5 files changed, 149 insertions(+), 1 deletion(-)
  create mode 100644 .gitignore
  create mode 100644 Dockerfile
  create mode 100644 random_fact.py
- create mode 100644 requirements.txt -->
+ create mode 100644 requirements.txt
 
 **git push origin main**
 
-<!-- Username for 'https://github.com': itsnaeem
+Username for 'https://github.com': itsnaeem
 Password for 'https://itsnaeem@github.com': 
 Enumerating objects: 9, done.
 Counting objects: 100% (9/9), done.
@@ -176,7 +176,7 @@ Compressing objects: 100% (5/5), done.
 Writing objects: 100% (7/7), 3.48 KiB | 3.48 MiB/s, done.
 Total 7 (delta 0), reused 0 (delta 0), pack-reused 0
 To https://github.com/Itsnaeem/Dice-Assignment1-Part1.git
-   895de78..c201b97  main -> main -->
+   895de78..c201b97  main -> main
 
 
 END of the Part - 1 of Assignment 1.
