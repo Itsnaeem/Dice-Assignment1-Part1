@@ -1,29 +1,32 @@
 # Dice-Assignment1-Part1
-This Assignment based on Docker. In this part We will create Docker File creation, GitHub and Docker Hub integration.
+- This Assignment based on Docker. In this part We will create Docker File creation, GitHub and Docker Hub integration.
 
 **Step 1 : Identify a Sample Application**
-I choose a python Application which get random requests from web.
+- I choose a python Application which get random requests from web.
 
 **Step 2 : Identify the Dependencies**
-In this Application **request** & **Flask** dependency is used.
+- In this Application **request** & **Flask** dependency is used.
 
 **Step 3 : Create a Docker file**
-This is Dockerfile for above app.
+- This is Dockerfile for above app.
 **Use an official Python image**
-FROM python
+- FROM python
 **Set the Working Directory inside the container**
-WORkDIR /usr/scr/app
+- WORkDIR /usr/scr/app
 **Copy the current dictory into container directory /usr/scr/app**
-COPY . .
+- COPY . .
 **install the dependency**
 RUN pip install -r requirements.txt
 **Run the application**
 CMD ["python", "./random_fact.py"]
 
 **Step 4 : Build the Docker Image**
+
 I create a Docker image for this application using command below.
+
 **docker build -t random_fact .**
-The output of this command is :
+
+<!-- The output of this command is :
 naeem@naeempc:~/Downloads/DevOps Dice/Dice-Assignment1-Part1$ docker build -t random_fact .
 [+] Building 8.0s (4/9)                                                                                                                             docker:defaultt
  => [internal] load build definition from Dockerfile                                                                                                          0.0ss
@@ -66,46 +69,117 @@ naeem@naeempc:~/Downloads/DevOps Dice/Dice-Assignment1-Part1$ docker build -t ra
 View build details: docker-desktop://dashboard/build/default/default/mqb7j2s2w5ro43v6beoref010
 
 What's Next?
-  View a summary of image vulnerabilities and recommendations → docker scout quickview
+  View a summary of image vulnerabilities and recommendations → docker scout quickview -->
 
 **Step 5 : Push the Docker Image to Docker Hub**
-In this step, First I create DockerHub account using Docker Desktop. Provide the details & login in Docker Desktop. Now you can push your local image to your Docker Hub Account.
+- In this step, First I create DockerHub account using Docker Desktop. Provide the details & login in Docker Desktop. Now you can push your local image to your Docker Hub Account.
+
 **docker images**
-REPOSITORY    TAG       IMAGE ID       CREATED         SIZE
-random_fact   latest    722e00083cf9   9 minutes ago   1.07GB
+
+- REPOSITORY    TAG       IMAGE ID       CREATED         SIZE
+- random_fact   latest    722e00083cf9   9 minutes ago   1.07GB
+
 **docker tag random_fact:latest itsnaeemraza/python_app:v1.0**
-This command is used for give the name to your image.
-docker tag [image_name:tag] [username/app_with_version]
- docker tag random_fact:latest itsnaeemraza/python_app:v1.0
+
+- This command is used for give the name to your image.
+- docker tag [image_name:tag] [username/app_with_version]
+- docker tag random_fact:latest itsnaeemraza/python_app:v1.0
 output is:
+
 naeem@naeempc:~/Downloads/DevOps Dice/Dice-Assignment1-Part1$ docker images
-REPOSITORY                TAG       IMAGE ID       CREATED          SIZE
+<!-- REPOSITORY                TAG       IMAGE ID       CREATED          SIZE
 itsnaeemraza/python_app   v1.0      722e00083cf9   12 minutes ago   1.07GB
-random_fact               latest    722e00083cf9   12 minutes ago   1.07GB
+random_fact               latest    722e00083cf9   12 minutes ago   1.07GB -->
 Then 
-Docker Login using the command : docker login 
-Authenticating with existing credentials...
-Login Succeeded
+- Docker Login using the command : 
+
+docker login
+
+- Authenticating with existing credentials...
+- Login Succeeded
+
 Then
-Docker Push for push your local image to your Docker Hub.
-docker push itsnaeemraza/python_app:v1.0
-The push refers to repository [docker.io/itsnaeemraza/python_app]
-18e43ee14add: Pushed 
-7b41292b8762: Pushed 
-2190825b34ed: Pushed 
-d82f6b7598c5: Mounted from library/python 
-70794eb73da1: Mounted from library/python 
-ae6af2c8b8ae: Mounted from library/python 
-3479e3189b94: Mounted from library/python 
-671f9916da8d: Mounted from library/python 
-2b952ea61c4b: Mounted from library/python 
-0dfa23fffa41: Mounted from library/python 
-aa904f36746c: Mounted from library/python 
-v1.0: digest: sha256:660c3187b1781cac40c87799dcf14bb941ae0b733e5d66611e9eafb45c8d0968 size: 2637
+- Docker Push for push your local image to your Docker Hub.
+- docker push itsnaeemraza/python_app:v1.0
+- The push refers to repository [docker.io/itsnaeemraza/python_app]
+- 18e43ee14add: Pushed 
+- 7b41292b8762: Pushed 
+- 2190825b34ed: Pushed 
+- d82f6b7598c5: Mounted from library/python 
+- 70794eb73da1: Mounted from library/python 
+- ae6af2c8b8ae: Mounted from library/python 
+- 3479e3189b94: Mounted from library/python 
+- 671f9916da8d: Mounted from library/python 
+- 2b952ea61c4b: Mounted from library/python 
+- 0dfa23fffa41: Mounted from library/python 
+- aa904f36746c: Mounted from library/python 
+- v1.0: digest: - sha256:660c3187b1781cac40c87799dcf14bb941ae0b733e5d66611e9eafb45c8d0968 size: 2637
 
 This will also show in your Docker Desktop & in your browser & login into docker & click on repositories.
 
 **Step 6 : Create a GitHub Repository**
+
+I create a repo for Dice-Assignment1-Part-1 on github account. 
+Then clone this repo in my system & all I do this in my local PC.
+
+**Step 7 : Include a README.md file**
+
+While create the new repo I click on include a README.md file in which I will document my assignment in this README.md . Now I added all the documentation in my this README.md by step by step.
+
+**Step 8 : Push the Codebase to GitHub**
+
+- git status
+<!-- 
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	new file:   DockerFile
+	modified:   README.md
+	new file:   random_fact.py
+	new file:   requirements.txt
+
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	deleted:    DockerFile
+	modified:   README.md
+	modified:   random_fact.py
+	modified:   requirements.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	.gitignore
+	Dockerfile -->
+
+- git add .
+
+naeem@naeempc:~/Downloads/DevOps Dice/Dice-Assignment1-Part1$ 
+**git commit -m "This is the Part-1 of Assignment-1 Dice DevOps Course"**
+
+<!-- [main c201b97] This is the Part-1 of Assignment-1 Dice DevOps Course
+ 5 files changed, 149 insertions(+), 1 deletion(-)
+ create mode 100644 .gitignore
+ create mode 100644 Dockerfile
+ create mode 100644 random_fact.py
+ create mode 100644 requirements.txt -->
+
+**git push origin main**
+
+<!-- Username for 'https://github.com': itsnaeem
+Password for 'https://itsnaeem@github.com': 
+Enumerating objects: 9, done.
+Counting objects: 100% (9/9), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (5/5), done.
+Writing objects: 100% (7/7), 3.48 KiB | 3.48 MiB/s, done.
+Total 7 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/Itsnaeem/Dice-Assignment1-Part1.git
+   895de78..c201b97  main -> main -->
+
+
+END of the Part - 1 of Assignment 1.
 
 
 
