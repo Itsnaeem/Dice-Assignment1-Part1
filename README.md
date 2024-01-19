@@ -25,7 +25,7 @@ CMD ["python", "./random_fact.py"]
 I create a Docker image for this application using command below.
 
 ```bash
-docker build -t random_fact .**
+docker build -t random_fact .
 ```
 The output of this command is :
 naeem@naeempc:~/Downloads/DevOps Dice/Dice-Assignment1-Part1$ docker build -t random_fact .
@@ -82,7 +82,7 @@ docker images
 - random_fact   latest    722e00083cf9   9 minutes ago   1.07GB
 
 ```bash
-docker tag random_fact:latest itsnaeemraza/python_app:v1.0**
+docker tag random_fact:latest itsnaeemraza/python_app:v1.0
 ```
 - This command is used for give the name to your image.
 - docker tag [image_name:tag] [username/app_with_version]
@@ -164,7 +164,7 @@ git add .
 naeem@naeempc:~/Downloads/DevOps Dice/Dice-Assignment1-Part1$ 
 
 ```bash
-git commit -m "This is the Part-1 of Assignment-1 Dice DevOps Course"**
+git commit -m "This is the Part-1 of Assignment-1 Dice DevOps Course
 ```
 [main c201b97] This is the Part-1 of Assignment-1 Dice DevOps Course
  5 files changed, 149 insertions(+), 1 deletion(-)
