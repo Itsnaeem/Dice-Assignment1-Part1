@@ -9,7 +9,7 @@
 
 **Step 3 : Create a Docker file**
 - This is Dockerfile for above app.
-**Use an official Python image**
+```**Use an official Python image**
 - FROM python
 **Set the Working Directory inside the container**
 - WORkDIR /usr/scr/app
@@ -19,7 +19,7 @@
 RUN pip install -r requirements.txt
 **Run the application**
 CMD ["python", "./random_fact.py"]
-
+```
 **Step 4 : Build the Docker Image**
 
 I create a Docker image for this application using command below.
