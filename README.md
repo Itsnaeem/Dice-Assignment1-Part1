@@ -9,23 +9,24 @@
 
 **Step 3 : Create a Docker file**
 - This is Dockerfile for above app.
-```**Use an official Python image**
+```##Use an official Python image
 - FROM python
-**Set the Working Directory inside the container**
+##Set the Working Directory inside the container
 - WORkDIR /usr/scr/app
-**Copy the current dictory into container directory /usr/scr/app**
+##Copy the current dictory into container directory /usr/scr/app
 - COPY . .
-**install the dependency**
+##install the dependency
 RUN pip install -r requirements.txt
-**Run the application**
+##Run the application
 CMD ["python", "./random_fact.py"]
 ```
 **Step 4 : Build the Docker Image**
 
 I create a Docker image for this application using command below.
 
-**docker build -t random_fact .**
-
+```bash
+docker build -t random_fact .**
+```
 The output of this command is :
 naeem@naeempc:~/Downloads/DevOps Dice/Dice-Assignment1-Part1$ docker build -t random_fact .
 [+] Building 8.0s (4/9)                                                                                                                             docker:defaultt
@@ -74,13 +75,15 @@ What's Next?
 **Step 5 : Push the Docker Image to Docker Hub**
 - In this step, First I create DockerHub account using Docker Desktop. Provide the details & login in Docker Desktop. Now you can push your local image to your Docker Hub Account.
 
-**docker images**
-
+```bash
+docker images
+```
 - REPOSITORY    TAG       IMAGE ID       CREATED         SIZE
 - random_fact   latest    722e00083cf9   9 minutes ago   1.07GB
 
-**docker tag random_fact:latest itsnaeemraza/python_app:v1.0**
-
+```bash
+docker tag random_fact:latest itsnaeemraza/python_app:v1.0**
+```
 - This command is used for give the name to your image.
 - docker tag [image_name:tag] [username/app_with_version]
 - docker tag random_fact:latest itsnaeemraza/python_app:v1.0
@@ -93,8 +96,9 @@ random_fact               latest    722e00083cf9   12 minutes ago   1.07GB
 Then 
 - Docker Login using the command : 
 
+```bash
 docker login
-
+```
 - Authenticating with existing credentials...
 - Login Succeeded
 
@@ -128,8 +132,9 @@ While create the new repo I click on include a README.md file in which I will do
 
 **Step 8 : Push the Codebase to GitHub**
 
-- git status
-
+```bash
+git status
+```
 On branch main
 Your branch is up to date with 'origin/main'.
 
@@ -153,11 +158,14 @@ Untracked files:
 	.gitignore
 	Dockerfile
 
-- git add .
-
+```bash
+git add .
+```
 naeem@naeempc:~/Downloads/DevOps Dice/Dice-Assignment1-Part1$ 
-**git commit -m "This is the Part-1 of Assignment-1 Dice DevOps Course"**
 
+```bash
+git commit -m "This is the Part-1 of Assignment-1 Dice DevOps Course"**
+```
 [main c201b97] This is the Part-1 of Assignment-1 Dice DevOps Course
  5 files changed, 149 insertions(+), 1 deletion(-)
  create mode 100644 .gitignore
@@ -179,7 +187,7 @@ To https://github.com/Itsnaeem/Dice-Assignment1-Part1.git
    895de78..c201b97  main -> main
 
 
-END of the Part - 1 of Assignment 1.
+##END of the Part - 1 of Assignment 1.
 
 
 
